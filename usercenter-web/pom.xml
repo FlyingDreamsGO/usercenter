@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.beauty.usercenter</groupId>
+		<artifactId>usercenter</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>usercenter-web</artifactId>
+	<packaging>war</packaging>
+	<name>usercenter-web</name>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.beauty.usercenter</groupId>
+			<artifactId>usercenter-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.beauty.usercenter</groupId>
+			<artifactId>usercenter-biz</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.beauty.usercenter</groupId>
+			<artifactId>usercenter-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>usercenter-web</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+                    <webResources>
+                        <resource>
+                            <!-- this is relative to the pom.xml directory -->
+                            <directory>webapp</directory>
+                        </resource>
+                    </webResources>
+                    <archiveClasses>false</archiveClasses>
+					<outputDirectory>./target/</outputDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

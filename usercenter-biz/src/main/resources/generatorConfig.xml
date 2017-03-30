@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry  location="/Users/zhaozhaonan/javaEnvironment/maven_owner/repository/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" />
+	<context id="DB2Entity" targetRuntime="MyBatis3" >
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$" />
+            <property name="replaceString" value="Conditions" />
+        </plugin>
+
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/usercenter?characterset=utf-8"
+                        userId="root"
+                        password="root" />
+
+        <!-- 生成实体的包名和位置-->
+        <javaModelGenerator targetPackage="com.beauty.usercenter.generator"
+                            targetProject="src/main/java" />
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="com.beauty.usercenter.generator"
+                         targetProject="src/main/java" />
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator targetPackage="com.beauty.usercenter.generator"
+                             targetProject="src/main/java" type="XMLMAPPER" />
+
+
+        <table tableName="userinfo" domainObjectName="UserinfoD"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="JDBC" />
+            <columnOverride column="id" javaType="long" />
+            <columnOverride column="age" javaType="int" />
+            <columnOverride column="name" javaType="String" />
+            <columnOverride column="birthday" javaType="String" />
+        </table>
+
+        <!--
+        <table tableName="sns_activity" domainObjectName="SnsActivity">
+           <generatedKey column="id" sqlStatement="JDBC" />
+           <columnOverride column="out_id" javaType="int" />
+           <columnOverride column="obj_id" javaType="int" />
+           <columnOverride column="title" javaType="String" />
+           <columnOverride column="tag_name" javaType="String" />
+           <columnOverride column="member_count" javaType="int" />
+           <columnOverride column="original_price" javaType="double" />
+           <columnOverride column="preferential_price" javaType="double" />
+           <columnOverride column="state" javaType="int" />
+           <columnOverride column="image" javaType="String" />
+           <columnOverride column="type" javaType="int" />
+           <columnOverride column="club" javaType="String" />
+           <columnOverride column="modify_time" javaType="Date" />
+           <columnOverride column="creater_time" javaType="Date" />
+       </table>
+        -->
+
+	</context>
+</generatorConfiguration>

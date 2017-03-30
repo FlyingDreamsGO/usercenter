@@ -1,0 +1,14 @@
+/**/.settings/
+/**/.classpath
+/**/target/
+/**/.project
+/**/bin/
+*.war
+*.ear
+/**/*.iml
+/.idea/
+/**/rebel-remote.xml
+/**/rebel.xml
+/**/.DS_Store
+/**/node_modules/
+/usercenter-web/*.log
